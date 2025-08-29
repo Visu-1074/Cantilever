@@ -9,15 +9,13 @@ app.secret_key = "dev"
 UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Path to Tesseract executable
 pytesseract.pytesseract.tesseract_cmd = r"C:\Tesseract OCR\tesseract.exe"
 
-# Allowed image extensions
 ALLOWED = {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".bmp"}
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-    texts = {}  # Dictionary to store filename -> extracted text
+    texts = {}
     if request.method == "POST":
         # Option 1: Upload images manually
         f = request.files.get("file")
