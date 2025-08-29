@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR App</title>
+</head>
+<body>
+    <h1>OCR Web App</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Upload a single image:</label>
+        <input type="file" name="file">
+        <button type="submit">Extract Text</button>
+    </form>
+
+    <form method="POST">
+        <input type="hidden" name="process_dataset" value="1">
+        <button type="submit">Process Entire Dataset</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    {% if texts %}
+        <h2>Extracted Texts:</h2>
+        {% for filename, text in texts.items() %}
+            <h3>{{ filename }}</h3>
+            <textarea rows="10" cols="60">{{ text }}</textarea>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

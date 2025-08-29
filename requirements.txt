@@ -1,0 +1,8 @@
+Flask
+requests
+beautifulsoup4
+pandas
+matplotlib
+openpyxl
+pytesseract
+Pillow

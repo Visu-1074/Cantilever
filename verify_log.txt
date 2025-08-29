@@ -1,0 +1,19 @@
+PASS 1
+OK: ecommerce_scraper/scraper.py compiles
+OK: ecommerce_scraper/visualize.py compiles
+OK: ecommerce_scraper/app.py compiles
+OK: ocr_app/app.py compiles
+OK: Template exists: ecommerce_scraper/templates/index.html
+OK: Template exists: ocr_app/templates/index.html
+NOTE: Chart will be written to: ecommerce_scraper/static/price_distribution.png (create by running visualize.py)
+NOTE: Chart will be written to: ecommerce_scraper/static/rating_vs_price.png (create by running visualize.py)
+
+PASS 2
+OK: ecommerce_scraper/scraper.py compiles
+OK: ecommerce_scraper/visualize.py compiles
+OK: ecommerce_scraper/app.py compiles
+OK: ocr_app/app.py compiles
+OK: Template exists: ecommerce_scraper/templates/index.html
+OK: Template exists: ocr_app/templates/index.html
+NOTE: Chart will be written to: ecommerce_scraper/static/price_distribution.png (create by running visualize.py)
+NOTE: Chart will be written to: ecommerce_scraper/static/rating_vs_price.png (create by running visualize.py)
