@@ -13,7 +13,6 @@ def read_products():
     return df
 
 def filter_df(df, filters):
-    # Ensure numeric columns
     if "Price" in df.columns:
         df["Price"] = pd.to_numeric(df["Price"], errors="coerce")
     if "Rating" in df.columns:
