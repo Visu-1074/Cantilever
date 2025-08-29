@@ -1,4 +1,4 @@
-# Cantilever Internship Projects (Fixed)
+# Cantilever Internship Project
 
 This repository contains two beginner-friendly projects for your Cantilever internship:
 
