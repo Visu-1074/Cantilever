@@ -9,16 +9,13 @@ if not os.path.exists(xlsx):
 
 df = pd.read_excel(xlsx)
 
-# Make output folder
 out_dir = os.path.join(BASE_DIR, "static")
 os.makedirs(out_dir, exist_ok=True)
 
-# --- Handle Price ---
 if "Price" in df.columns:
     df["Price"] = pd.to_numeric(df["Price"], errors="coerce")
     df = df.dropna(subset=["Price"]).copy()
 
-    # Price Distribution
     if not df["Price"].empty:
         plt.figure(figsize=(8,5))
         df["Price"].plot(kind="hist", bins=20, edgecolor="black")
@@ -30,11 +27,9 @@ if "Price" in df.columns:
 else:
     print("No 'Price' column found in Excel. Skipping price plots.")
 
-# --- Handle Rating ---
 if "Rating" in df.columns:
     df["Rating"] = pd.to_numeric(df["Rating"], errors="coerce")
 
-    # Rating vs Price scatter (only if Price also exists)
     if "Price" in df.columns and not df.dropna(subset=["Rating"]).empty:
         plt.figure(figsize=(8,5))
         df.dropna(subset=["Rating"]).plot(kind="scatter", x="Rating", y="Price", alpha=0.7)
