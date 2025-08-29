@@ -52,7 +52,6 @@ def index():
     df = read_products()
     df = filter_df(df, filters)
 
-    # pagination
     page = int(request.args.get("page", 1))
     per_page = 20
     total = len(df)
@@ -60,7 +59,6 @@ def index():
     start, end = (page-1)*per_page, (page-1)*per_page + per_page
     view = df.iloc[start:end]
 
-    # Replace NaN with None so template doesn’t show "nan"
     view = view.where(pd.notnull(view), None)
 
     return render_template("index.html", rows=view.to_dict(orient="records"),
