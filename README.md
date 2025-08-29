@@ -47,3 +47,9 @@ This repository contains two beginner-friendly projects for your Cantilever inte
 - **Tesseract engine** must be installed separately on your machine for pytesseract to work.
   - Windows example: install Tesseract and set `pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"`
 - This project is designed for learning and may need selector updates if adapted to other e-commerce sites.
+
+
+
+
+Author: Vishal Yadav
+Role: Cantilever Internship Participant
